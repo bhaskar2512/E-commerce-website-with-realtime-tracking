@@ -10,9 +10,12 @@ app.use(expressLayouts);
 app.set('views',path.join(__dirname,'resources/views'));
 app.set('view engine','ejs');
 
+//Assets
+app.use(express.static('public'));
+
 //routes
 app.get('/',(req,res)=>{
-    res.render('homestart',{layout:false});
+    res.render('home',{layout:false});
     //express ignores
     //error resolved https://stackoverflow.com/questions/21907526/express-ignoring-views-directory
 })
