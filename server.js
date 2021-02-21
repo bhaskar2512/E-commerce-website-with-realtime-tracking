@@ -15,9 +15,21 @@ app.use(express.static('public'));
 
 //routes
 app.get('/',(req,res)=>{
-    res.render('home',{layout:false});
+    res.render('home');
     //express ignores
     //error resolved https://stackoverflow.com/questions/21907526/express-ignoring-views-directory
+})
+
+app.get('/cart',(req,res)=>{
+    res.render('customers/cart');
+})
+
+app.get('/login',(req,res)=>{
+    res.render('auth/login');
+})
+
+app.get('/register',(req,res)=>{
+    res.render('auth/register');
 })
 
 app.listen(PORT, ()=> {
