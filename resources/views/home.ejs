@@ -14,117 +14,21 @@
     <section class="container mx-auto menu py-8">
         <h1>All Pizzas</h1>
         <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+            <% for(let cake of cakes) {%> 
             <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
+                <img src="/img/<%=cake.image%>" class="h-40 mb-4 mx-auto">
                 <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
+                    <h3 class="mb-4 text-lg"><%=cake.name%></h3>
+                    <span class="size py-1 px-3 rounded-full uppercase text-xs"><%=cake.size%></span>
                     <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
+                        <span class="font-bold text-lg">₹<%=cake.price%></span>
+                        <button data-cake="<%= JSON.stringify(cake)%>" class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
                             <span>+</span>
                             <span class="ml-4">Add</span>
                         </button>
                     </div>
                 </div>
             </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-64">
-                <img src="/img/cake.png" class="h-40 mb-4 mx-auto">
-                <div class="text-center">
-                    <h3 class="mb-4 text-lg">Black Forest</h3>
-                    <span class="size py-1 px-3 rounded-full uppercase text-xs">small(250gm)</span>
-                    <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold text-lg">₹350</span>
-                        <button class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <% } %> 
         </div>
     </section>
