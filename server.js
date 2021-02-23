@@ -9,6 +9,7 @@ const mongoose=require('mongoose');
 const session=require('express-session');
 const flash=require('express-flash');
 const MongoDBStore=require('connect-mongo')(session);
+const passport=require('passport');
 
 //Database Connections
 const url='mongodb://localhost/cake';
@@ -33,6 +34,21 @@ app.use(session({
     saveUninitialized:false,
     store:mongoStore,
     cookie:{maxAge:24*60*60*1000}
+})) 
+
+//Passport Config
+const passportInit = require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Session config
+app.use(session({
+    secret:process.env.COOKIE_SECRET,
+    resave:false,
+    saveUninitialized:false,
+    store:mongoStore,
+    cookie:{maxAge:24*60*60*1000}
 }))
 
 app.use(flash());
@@ -44,11 +60,13 @@ app.set('view engine','ejs');
 
 //Assets
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //Global Middlewares
 app.use((req,res,next)=>{
     res.locals.session=req.session;
+    res.locals.user=req.user;
     next();
 })
 
