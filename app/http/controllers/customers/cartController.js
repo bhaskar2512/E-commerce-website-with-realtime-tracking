@@ -11,7 +11,6 @@ function cartController(){
                     totalPrice: 0
                 }
             }
-            console.log(req.body);
             const cart= req.session.cart;
             if(!cart.items[req.body._id]){
                 cart.items[req.body._id]={

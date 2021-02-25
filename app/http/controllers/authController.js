@@ -29,7 +29,10 @@ function authController(){
                         req.flash('error',info.message);
                         return next(err);
                     }
-                    res.redirect('/');
+                    if(user.role==='admin'){
+                        return res.redirect('/admin/orders');
+                    }
+                    return res.redirect('/customers/orders');
                 })
             })(req,res,next)
         },
