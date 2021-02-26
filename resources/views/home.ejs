@@ -3,7 +3,7 @@
         <div class="mx-auto container flex items-center justify-between">
             <div class="w-1/2">
                 <h6 class="text-lg"><em>Are you hungry?</em></h6>
-                <h1 class="text-6xl font-bold">Don't Wait!</h1>
+                <h1 class="text-3xl md:text-6xl font-bold">Don't Wait!</h1>
                 <button class="px-6 py-2 rounded-full flex text-white font-bold mt-4 btn-primary">Order Now</button>
             </div>
             <div class="w-1/2">
@@ -13,9 +13,9 @@
     </section>
     <section class="container mx-auto menu py-8">
         <h1>All Pizzas</h1>
-        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16">
             <% for(let cake of cakes) {%> 
-            <div class="w-64">
+            <div class="w-full md:w-64">
                 <img src="/img/<%=cake.image%>" class="h-40 mb-4 mx-auto">
                 <div class="text-center">
                     <h3 class="mb-4 text-lg"><%=cake.name%></h3>
