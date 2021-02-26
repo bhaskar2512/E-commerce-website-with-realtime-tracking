@@ -20,7 +20,7 @@
                     <% for(let order of orders){ %>  
                         <tr>
                             <td class="px-4 py-2 border">
-                                <a class="link" href="/"><%= order._id %> </a>
+                                <a class="link" href="/customers/orders/<%=order._id%>"><%= order._id %> </a>
                             </td>
                             <td class="px-4 py-2 border">
                                 <%= order.phone %> 

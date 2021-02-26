@@ -13,7 +13,7 @@ function authController(){
             const {email,password}=req.body;
             if(!email || !password){
                 req.flash('error','All fields are required.');
-                return res.redirect('/register');
+                return res.redirect('/login');
             }
             passport.authenticate('local',(err,user,info)=>{
                 if(err){
