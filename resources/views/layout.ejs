@@ -15,13 +15,18 @@
 <body>
     <nav class="container mx-auto flex items-center justify-between py-4">
         <div>
-            <img src="/img/logo.png" alt="logo">
+            <a href="/"><img src="/img/logo.png" alt="logo"></a>
         </div>
         <div>
             <ul class="flex items-center">
-                <li class="ml-6"><a href="#">Menu</a></li>
-                <li class="ml-6"><a href="#">Offers</a></li>
+                <li class="ml-6"><a href="/#menu-items">Menu</a></li>
+                <li class="ml-6"><a href="/offers">Offers</a></li>
                 <% if(user){ %>
+                    <li class="ml-6"><a href="/customers/orders">Check Status</a></li> 
+                    <% if(user.role=='admin'){ %>
+                        <li class="ml-6"><a href="/addcakes">Add Cakes</a></li>
+                        <li class="ml-6"><a href="/admin/orders">Update Status</a></li>
+                    <% } %> 
                     <li class="ml-6">
                         <form id="logout" action="/logout" method="post">
                             <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>

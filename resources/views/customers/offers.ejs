@@ -1,0 +1,18 @@
+<section class="offers">
+    <div class="container mx-auto pt-12 w-full md:w-2/3">
+        <h1 class="font-bold text-lg mb-4">All Offers 😃</h1>
+        <div class="offer-list">
+            <% for(offer of offers){ %>
+            <div class="flex items-center my-8">
+                <img class="w-24" src="/img/cake.png">
+                <div class="flex-1 ml-4">
+                    <h1>Flat <%=offer.discountPercent%>% Off!</h1>
+                    <span><%=offer.description%>!</span>
+                </div>
+                <span class="flex-1">minimum order-> <%=offer.minimumOrderAmt%></span>
+                <span class="font-bold text-xs">Terms and condition apply.</span>
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</section>

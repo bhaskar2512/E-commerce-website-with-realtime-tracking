@@ -4,7 +4,7 @@
             <div class="w-1/2">
                 <h6 class="text-lg"><em>Are you hungry?</em></h6>
                 <h1 class="text-3xl md:text-6xl font-bold">Don't Wait!</h1>
-                <button class="px-6 py-2 rounded-full flex text-white font-bold mt-4 btn-primary">Order Now</button>
+                <button class="px-6 py-2 rounded-full flex text-white font-bold mt-4 btn-primary"><a href="#menu-items">Order Now</a></button>
             </div>
             <div class="w-1/2">
                 <img src="/img/hero-cake.png">
@@ -12,7 +12,7 @@
         </div>
     </section>
     <section class="container mx-auto menu py-8">
-        <h1>All Pizzas</h1>
+        <h1 class="text-xl font-bold mb-6" id="menu-items">All Cakes</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16">
             <% for(let cake of cakes) {%> 
             <div class="w-full md:w-64">
@@ -22,6 +22,17 @@
                     <span class="size py-1 px-3 rounded-full uppercase text-xs"><%=cake.size%></span>
                     <div class="flex items-center justify-around mt-6">
                         <span class="font-bold text-lg">₹<%=cake.price%></span>
+                        <% if(user){ %> 
+                            <% if(user.role==='admin'){ %> 
+                                <form action="/deletecake" method="POST" >
+                                    <input type="hidden" name="thatcake" value="<%= cake._id%>">
+                                    <input type="hidden" name="filenameofcake" value="<%= cake.image%>">
+                                    <button type="submit" class="delete-Cake font-bold rounded-full items-center py-1 px-2">
+                                        <span>Delete</span>
+                                    </button>
+                                </form>
+                            <% } %> 
+                        <% } %> 
                         <button data-cake="<%= JSON.stringify(cake)%>" class="add-to-cart py-1 px-6 flex items-center font-bold rounded-full">
                             <span>+</span>
                             <span class="ml-4">Add</span>

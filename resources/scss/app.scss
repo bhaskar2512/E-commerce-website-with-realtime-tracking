@@ -2,6 +2,10 @@
 @import '~noty/src/noty.scss';
 @import '~noty/src/themes/mint.scss';
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -36,6 +40,19 @@ section.hero{
     transition: $smooth;
     &:hover{
         background:$primary;
+        border-color: $pure;
+        color:$pure;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.delete-Cake{
+    border: 2px solid rgb(255, 0, 0);
+    color:rgb(255, 0, 0);
+    transition: $smooth;
+    &:hover{
+        background:rgb(255, 0, 0);
         border-color: $pure;
         color:$pure;
     }

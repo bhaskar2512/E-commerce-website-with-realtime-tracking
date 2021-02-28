@@ -26966,6 +26966,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+ //Update Cart
 
 var addtocart = document.querySelectorAll('.add-to-cart');
 var cartCounter = document.querySelector('#cartCounter');

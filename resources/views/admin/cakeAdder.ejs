@@ -1,0 +1,41 @@
+<section class="login flex pt-24 justify-center">
+    <div class="w-full max-w-xs md:max-w-lg">
+        <form action="/addcakes" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <% if(messages.error){ %> 
+            <span class="text-red-500 font-bold text-md"><%=messages.error%></span>
+            <% } %> 
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cakename">
+              Cake
+            </label>
+            <input name="cake" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cakename" type="text" placeholder="Name of cake.">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="size">
+              Size
+            </label>
+            <input name="size" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="size" type="text" placeholder="Cake size.">   
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="price">
+              Price
+            </label>
+            <input name="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="price" type="text" placeholder="price of cake">   
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
+              Add Image
+            </label>
+            <input name="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="image" type="file" placeholder="Choose an Image">   
+          </div>
+          <div class="flex items-center justify-between">
+            <button type="submit" class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+              Add Cake
+            </button>
+          </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs">
+          &copy;2020 Cake Wave. All rights reserved.
+        </p>
+      </div>
+</section>

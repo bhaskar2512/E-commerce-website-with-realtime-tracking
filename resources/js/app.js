@@ -3,6 +3,7 @@ import axios from 'axios';
 import {initAdmin} from './admin';
 import moment from 'moment';
 
+//Update Cart
 let addtocart=document.querySelectorAll('.add-to-cart')
 const cartCounter=document.querySelector('#cartCounter');
 
@@ -31,6 +32,8 @@ addtocart.forEach((btn) => {
         updatecart(cake);
     })
 });
+
+
 
 const successAlert = document.querySelector('#success-alert');
 

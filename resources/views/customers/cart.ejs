@@ -15,7 +15,7 @@
             <img src="/img/cart-black.png">
             <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
         </div>
-        <div class="pizza-list">
+        <div class="cake-list">
             <% for(let cake of Object.values(session.cart.items)){ %>
             <div class="flex items-center my-8">
                 <img class="w-24" src="/img/<%=cake.item.image%>">
@@ -30,10 +30,33 @@
         </div>
         <hr>
         <div class="text-right py-4">
+            <% if(!session.discount){ %> 
+                <form action="/verify" method="POST">
+                    <input type="text" name="discount" class="border border-gray-400 p-2 w-1/2 mb-4" placeholder="Have COUPON Code?">
+                    <button type="submit" class="btn-primary rounded-full font-bold mt-6 py-2 px-6 text-white">Verify</button>
+                </form>
+            <% } %> 
+            <% if(messages.notvalid){ %> 
+                <span class="text-red-500 font-bold text-lg"><%=messages.notvalid%></span>
+            <% } %>
+            <% if(messages.valid){ %> 
+                <span class="text-green-500 font-bold text-lg"><%=messages.valid%></span>
+            <% } %> 
             <div>
                 <span class="text-lg font-bold">Total Amount:</span>
                 <span class="amount text-2xl ml-2 font-bold">₹<%=session.cart.totalPrice%></span>
             </div>
+            <% if(session.discount){ %> 
+                <div>
+                    <span class="text-lg font-bold">Discount: -</span>
+                    <span class="text-2xl ml-2 font-bold text-green-500">₹<%=session.discount%></span>
+                </div>
+                <hr>
+                <div>
+                    <span class="text-lg font-bold">Final Amount:</span>
+                    <span class="text-2xl ml-2 font-bold text-red-700">₹<%=session.cart.totalPrice - session.discount%></span>
+                </div>
+            <% } %> 
             <% if(user){ %>
             <div>
                 <form action="/orders" method="POST" class="mt-12">
@@ -46,7 +69,7 @@
                 </form>
             </div>
             <% }else{%>
-            <a href="/login" class="inline-block cursor-pointer btn-primary rounded-full font-bold mt-6 py-2 px-6 text-white">Login to continue</a>
+                <a href="/login" class="inline-block cursor-pointer btn-primary rounded-full font-bold mt-6 py-2 px-6 text-white">Login to continue</a>
             <% } %> 
         </div>
     </div>
