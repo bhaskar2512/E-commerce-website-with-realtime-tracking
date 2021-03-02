@@ -23,6 +23,46 @@ function offersController(){
             const dis = Math.min( thatoffer.maxDiscount , (total * percent)/100);
             req.session.discount = dis;
             return res.redirect('/cart');
+        },
+        async addoffer(req,res){
+            const {couponCode, description,discountPercent,minimumOrderAmt,maxDiscount,termsandconditions}=req.body;
+            if(!couponCode|| !description|| !discountPercent || !minimumOrderAmt || !maxDiscount || !termsandconditions){
+                req.flash('error','All fields are required.');
+                return res.redirect('/offers');
+            }
+            Offer.exists({couponCode:couponCode},async (err,result)=>{
+                if(result){
+                    await Offer.findOneAndDelete({couponCode:couponCode});
+                    const offer = new Offer({
+                        couponCode:couponCode,
+                        description:description,
+                        discountPercent:discountPercent,
+                        minimumOrderAmt:minimumOrderAmt,
+                        maxDiscount:maxDiscount,
+                        terms:termsandconditions
+                    })
+                    await offer.save();
+                    req.flash('success','Offer successfully updated!');
+                    return res.redirect('/offers');
+                }else{
+                    const offer = new Offer({
+                        couponCode:couponCode,
+                        description:description,
+                        discountPercent:discountPercent,
+                        minimumOrderAmt:minimumOrderAmt,
+                        maxDiscount:maxDiscount,
+                        terms:termsandconditions
+                    })
+                    await offer.save();
+                    req.flash('success','Offer successfully created!');
+                    return res.redirect('/offers');
+                }
+            })
+        },
+        async deleteoffer(req,res){
+            const { couponCode } =req.body;
+            await Offer.findOneAndDelete({couponCode:couponCode});
+            return res.redirect('/offers')
         }
     }
 }

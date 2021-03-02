@@ -27087,6 +27087,22 @@ socket.on('orderUpdated', function (data) {
   }).show();
 });
 
+function formgenerator() {
+  return "\n        <section class=\"login flex pt-24 justify-center\">\n            <div class=\"w-full max-w-xs md:max-w-md lg:max-w-lg\">\n                \n                <h1 class=\"font bold text-lg mb-4\">Enter the offer details.</h1>\n                <form action=\"/addoffers\" method=\"POST\" class=\"bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4\">\n                 \n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"couponCode\">\n                    COUPON\n                    </label>\n                    <input name=\"couponCode\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"couponCode\" type=\"text\" placeholder=\"Enter the Coupon Code.\">\n                </div>\n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"description\">\n                    Description\n                    </label>\n                    <input name=\"description\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"description\" type=\"text\" placeholder=\"Enter the description.\">\n                </div>\n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"discountPercent\">\n                    Percent Discount\n                    </label>\n                    <input name=\"discountPercent\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"discountPercent\" type=\"text\" placeholder=\"Enter the discount Percent\">\n                </div>\n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"minimumOrderAmt\">\n                    Min. Order Amount\n                    </label>\n                    <input name=\"minimumOrderAmt\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"minimumOrderAmt\" type=\"text\" placeholder=\"Enter the minimum order amount\">\n                </div>\n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"maxDiscount\">\n                    Max Discount\n                    </label>\n                    <input name=\"maxDiscount\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"maxDiscount\" type=\"text\" placeholder=\"Enter the maximum discount\">\n                </div>\n                <div class=\"mb-4\">\n                    <label class=\"block text-gray-700 text-sm font-bold mb-2\" for=\"termsandconditions\">\n                    Terms and Conditions\n                    </label>\n                    <input name=\"termsandconditions\" class=\"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline\" id=\"termsandconditions\" type=\"text\" placeholder=\"Enter the Terms and Conditions\">\n                </div>\n                <div class=\"flex items-center justify-between\">\n                    <button type=\"submit\" class=\"btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline\" type=\"button\">\n                    Add\n                    </button>\n                </div>\n                </form>\n                <p class=\"text-center text-gray-500 text-xs\">\n                &copy;2020 Cake Wave. All rights reserved.\n                </p>\n            </div>\n        </section>\n    ";
+}
+
+function formopener() {
+  document.querySelector('.offer-adder').innerHTML = formgenerator();
+}
+
+var formbtn = document.getElementById('formadder');
+
+if (formbtn) {
+  formbtn.addEventListener('click', function (e) {
+    formopener();
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/scss/app.scss":

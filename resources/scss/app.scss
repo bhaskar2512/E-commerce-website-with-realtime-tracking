@@ -67,6 +67,9 @@ section.hero{
     &:hover{
         background:$primary-hover;
     }
+    &:focus{
+        outline: none;
+    }
 }
 
 section.cart{
@@ -202,6 +205,17 @@ section.status{
     float: right;
     font-size: 14px;
     margin-top: 8px;
+}
+
+.las{
+    color: red;
+    background-color:$pure;
+    border-radius: 10px;
+    transition: $smooth;
+    &:hover{
+        color: $pure;
+        background-color: red;
+    }   
 }
 
 @media(max-width:1060px) {

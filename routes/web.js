@@ -54,6 +54,10 @@ function initRoutes(app){
 
     app.post('/addcakes',admin, upload.single('image'), addController().addCake);
 
+    app.post('/addoffers',admin ,offersController().addoffer);
+
+    app.post('/deleteoffer',admin ,offersController().deleteoffer);
+
     app.post('/deletecake',admin,addController().deleteCake);
 
     app.get('/admin/orders',admin,adminOrderController().index);

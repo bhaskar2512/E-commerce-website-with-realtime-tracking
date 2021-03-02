@@ -48,5 +48,13 @@
     <%- body %>
     <script src="/socket.io/socket.io.js "></script>
     <script src="/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script>
+        $(".full-landing-image").ripples({
+        resolution: 200,
+        perturbance: 0.09,
+        });
+    </script>
 </body>
 </html>
