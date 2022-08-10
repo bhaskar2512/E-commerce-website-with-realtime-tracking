@@ -2,7 +2,7 @@
 
 # Description 
 This is a project build for an E-commerce website with realtime tracking.!
-Using this website one can add his/her items in the cart and then place the order.
+Using this website one can add their items in the cart and then place the order.
 This project provides realtime tracking of order using soket.io.
 ---
 ## Requirements
